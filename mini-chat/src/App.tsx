@@ -50,7 +50,6 @@ const App: React.FC = () => {
     setMenuOpen((open) => !open);
   };
 
-  // Fecha o menu se clicar fora
   useEffect(() => {
     if (!menuOpen) return;
     const handleClick = (e: MouseEvent) => {

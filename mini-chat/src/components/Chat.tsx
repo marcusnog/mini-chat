@@ -25,11 +25,9 @@ const Chat: React.FC<ChatProps> = ({ username }) => {
 
   useEffect(() => {
     if (pendingReceived.length === 0) return;
-    // Mostra o indicador 1s antes da mensagem chegar
     const typingTimeout = setTimeout(() => {
       setTyping(pendingReceived[0].author);
     }, 4000);
-    // Envia a mensagem após 5s
     const msgTimeout = setTimeout(() => {
       sendMessage(pendingReceived[0]).then((msg) => setMessages((msgs) => [...msgs, msg]));
       setPendingReceived((prev) => prev.slice(1));
